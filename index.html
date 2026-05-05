@@ -4,19 +4,48 @@
   <title>Akhil Sai | Data Analyst</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-    body { background: #0f172a; color: white; }
+    body {
+      color: white;
+      background: linear-gradient(270deg, #0f172a, #1e293b, #020617);
+      background-size: 600% 600%;
+      animation: gradientMove 10s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% }
+      50% { background-position: 100% }
+      100% { background-position: 0% }
+    }
+
+    /* Floating symbols */
+    .symbols span {
+      position: absolute;
+      color: rgba(255,255,255,0.1);
+      font-size: 20px;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
 
     nav {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0,0,0,0.5);
       position: sticky;
       top: 0;
-      background: #020617;
-      padding: 15px;
-      text-align: center;
     }
 
     nav a {
@@ -43,11 +72,6 @@
       color: transparent;
     }
 
-    #typing {
-      color: #cbd5f5;
-      margin-top: 10px;
-    }
-
     section {
       max-width: 1000px;
       margin: auto;
@@ -59,12 +83,13 @@
       padding: 20px;
       margin: 20px 0;
       border-radius: 12px;
+      backdrop-filter: blur(10px);
       transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.1);
     }
 
     .btn {
@@ -82,16 +107,19 @@
       padding: 20px;
       color: #94a3b8;
     }
-
-    img.project {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
   </style>
 </head>
 
 <body>
+
+<!-- Floating code symbols -->
+<div class="symbols">
+  <span style="left:10%">{ }</span>
+  <span style="left:30%">&lt;/&gt;</span>
+  <span style="left:50%">SQL</span>
+  <span style="left:70%">{ }</span>
+  <span style="left:90%">&lt;/&gt;</span>
+</div>
 
 <nav>
   <a href="#about">About</a>
@@ -99,47 +127,41 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<header data-aos="fade-down">
+<header>
   <img src="profile.jpg">
   <h1>Akhil Sai</h1>
-  <p id="typing"></p>
+  <p>📊 Aspiring Data Analyst | Python • SQL • Power BI</p>
   <a href="resume.pdf" class="btn">Download Resume</a>
 </header>
 
-<section id="about" data-aos="fade-up">
+<section id="about">
   <h2>🚀 About Me</h2>
   <div class="card">
-    <p>I am a BSc Computers graduate focused on solving real-world business problems using data analytics. I specialize in Python, SQL, and Power BI to transform data into actionable insights.</p>
+    <p>I am a BSc Computers graduate passionate about solving business problems using data analytics and building insights from data.</p>
   </div>
 </section>
 
-<section id="projects" data-aos="fade-up">
+<section id="projects">
   <h2>📊 Projects</h2>
 
   <div class="card">
     <h3>Sales Dashboard Analysis</h3>
-    <p>Analyzed 10,000+ sales records and identified 15% revenue loss in key regions.</p>
-    <img src="project1.png" class="project">
-    <a href="#" class="btn">View Project</a>
+    <p>Analyzed 10,000+ records to identify profit trends.</p>
   </div>
 
   <div class="card">
     <h3>Customer Churn Analysis</h3>
-    <p>Built prediction model to identify high-risk customers and improve retention.</p>
-    <img src="project2.png" class="project">
-    <a href="#" class="btn">View Project</a>
+    <p>Built model to predict customer drop.</p>
   </div>
 
   <div class="card">
     <h3>HR Analytics Dashboard</h3>
-    <p>Analyzed employee attrition and identified factors affecting workforce retention.</p>
-    <img src="project3.png" class="project">
-    <a href="#" class="btn">View Project</a>
+    <p>Analyzed employee attrition insights.</p>
   </div>
 
 </section>
 
-<section id="contact" data-aos="fade-up">
+<section id="contact">
   <h2>📫 Contact</h2>
   <div class="card">
     <p><a href="https://www.linkedin.com/in/thirunagariakhil">LinkedIn</a></p>
@@ -148,25 +170,8 @@
 </section>
 
 <footer>
-  <p>© 2026 Akhil Sai | Data Analyst Portfolio</p>
+  <p>© 2026 Akhil Sai | Data Analyst</p>
 </footer>
-
-<!-- Typing Animation -->
-<script>
-  const text = "Aspiring Data Analyst | Python • SQL • Power BI";
-  let i = 0;
-  function type() {
-    if (i < text.length) {
-      document.getElementById("typing").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, 50);
-    }
-  }
-  type();
-</script>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
 
 </body>
 </html>
