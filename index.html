@@ -2,85 +2,171 @@
 <html>
 <head>
   <title>Akhil Sai | Data Analyst</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: #0f172a;
-      color: white;
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body { background: #0f172a; color: white; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #020617;
+      padding: 15px;
+      text-align: center;
     }
+
+    nav a {
+      margin: 0 15px;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
     header {
       text-align: center;
-      padding: 60px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      padding: 80px 20px;
     }
-    h1 { color: #38bdf8; font-size: 40px; }
-    h2 { color: #22c55e; }
-    .container { padding: 40px; max-width: 900px; margin: auto; }
+
+    header img {
+      width: 140px;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+    }
+
+    h1 {
+      font-size: 40px;
+      background: linear-gradient(90deg, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    #typing {
+      color: #cbd5f5;
+      margin-top: 10px;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
     .card {
-      background: #1e293b;
+      background: rgba(255,255,255,0.05);
       padding: 20px;
       margin: 20px 0;
       border-radius: 12px;
       transition: 0.3s;
     }
+
     .card:hover {
-      transform: scale(1.03);
-      background: #334155;
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.08);
     }
-    a {
-      color: #facc15;
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 8px;
       text-decoration: none;
     }
-    ul { line-height: 1.8; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+    }
+
+    img.project {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header data-aos="fade-down">
+  <img src="profile.jpg">
   <h1>Akhil Sai</h1>
-  <p>📊 Aspiring Data Analyst | Python • SQL • Power BI</p>
+  <p id="typing"></p>
+  <a href="resume.pdf" class="btn">Download Resume</a>
 </header>
 
-<div class="container">
+<section id="about" data-aos="fade-up">
+  <h2>🚀 About Me</h2>
+  <div class="card">
+    <p>I am a BSc Computers graduate focused on solving real-world business problems using data analytics. I specialize in Python, SQL, and Power BI to transform data into actionable insights.</p>
+  </div>
+</section>
 
-<div class="card">
-<h2>🚀 About Me</h2>
-<p>I am a BSc Computers graduate passionate about analyzing data and solving real-world business problems using data analytics tools.</p>
-</div>
+<section id="projects" data-aos="fade-up">
+  <h2>📊 Projects</h2>
 
-<div class="card">
-<h2>🛠 Skills</h2>
-<ul>
-<li>Python (Pandas, NumPy)</li>
-<li>SQL (Joins, Queries)</li>
-<li>Excel (Data Analysis)</li>
-<li>Power BI (Dashboards)</li>
-</ul>
-</div>
+  <div class="card">
+    <h3>Sales Dashboard Analysis</h3>
+    <p>Analyzed 10,000+ sales records and identified 15% revenue loss in key regions.</p>
+    <img src="project1.png" class="project">
+    <a href="#" class="btn">View Project</a>
+  </div>
 
-<div class="card">
-<h2>📊 Projects</h2>
+  <div class="card">
+    <h3>Customer Churn Analysis</h3>
+    <p>Built prediction model to identify high-risk customers and improve retention.</p>
+    <img src="project2.png" class="project">
+    <a href="#" class="btn">View Project</a>
+  </div>
 
-<p><b>🔹 Sales Dashboard Analysis</b><br>
-Analyzed sales data and identified profit & loss trends using Power BI.</p>
+  <div class="card">
+    <h3>HR Analytics Dashboard</h3>
+    <p>Analyzed employee attrition and identified factors affecting workforce retention.</p>
+    <img src="project3.png" class="project">
+    <a href="#" class="btn">View Project</a>
+  </div>
 
-<p><b>🔹 Customer Churn Analysis</b><br>
-Identified customer drop patterns and built basic prediction model in Python.</p>
+</section>
 
-<p><b>🔹 HR Analytics Dashboard</b><br>
-Analyzed employee attrition and created insights for HR decision-making.</p>
+<section id="contact" data-aos="fade-up">
+  <h2>📫 Contact</h2>
+  <div class="card">
+    <p><a href="https://www.linkedin.com/in/thirunagariakhil">LinkedIn</a></p>
+    <p><a href="https://github.com/akhil-data-analytics">GitHub</a></p>
+  </div>
+</section>
 
-</div>
+<footer>
+  <p>© 2026 Akhil Sai | Data Analyst Portfolio</p>
+</footer>
 
-<div class="card">
-<h2>📫 Contact</h2>
-<p>💼 LinkedIn: <a href="https://www.linkedin.com/in/thirunagariakhil" target="_blank">View Profile</a></p>
-<p>🌐 Portfolio: <a href="https://akhil-data-analytics.github.io/" target="_blank">Visit Website</a></p>
-</div>
+<!-- Typing Animation -->
+<script>
+  const text = "Aspiring Data Analyst | Python • SQL • Power BI";
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+  type();
+</script>
 
-</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
 
 </body>
 </html>
