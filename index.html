@@ -5,6 +5,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/4d8b4c3c1a.js" crossorigin="anonymous"></script>
+
   <style>
     * {
       margin: 0;
@@ -15,35 +18,43 @@
 
     body {
       color: white;
-      background: linear-gradient(270deg, #0f172a, #1e293b, #020617);
-      background-size: 600% 600%;
-      animation: gradientMove 10s ease infinite;
+      background: #020617;
       overflow-x: hidden;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% }
-      50% { background-position: 100% }
-      100% { background-position: 0% }
+    /* GRID BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(#0f172a 1px, transparent 1px),
+        linear-gradient(90deg, #0f172a 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.2;
+      z-index: -2;
     }
 
-    /* Floating symbols */
-    .symbols span {
-      position: absolute;
-      color: rgba(255,255,255,0.1);
-      font-size: 20px;
-      animation: float 10s linear infinite;
+    /* GLOW EFFECT */
+    body::after {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #38bdf8, transparent);
+      top: 30%;
+      left: 40%;
+      filter: blur(120px);
+      opacity: 0.3;
+      z-index: -1;
     }
 
-    @keyframes float {
-      from { transform: translateY(100vh); }
-      to { transform: translateY(-10vh); }
-    }
-
+    /* NAVBAR */
     nav {
       text-align: center;
       padding: 15px;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       position: sticky;
       top: 0;
     }
@@ -52,28 +63,48 @@
       margin: 0 15px;
       color: #38bdf8;
       text-decoration: none;
+      font-weight: 500;
     }
 
+    /* HEADER */
     header {
       text-align: center;
       padding: 80px 20px;
     }
 
     header img {
-      width: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 3px solid #38bdf8;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
     }
 
     h1 {
       font-size: 40px;
+      margin-top: 10px;
       background: linear-gradient(90deg, #38bdf8, #22c55e);
       -webkit-background-clip: text;
       color: transparent;
     }
 
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #22c55e;
+    }
+
     section {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
       padding: 40px 20px;
     }
@@ -88,17 +119,17 @@
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      background: rgba(255,255,255,0.1);
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 15px;
-      background: #38bdf8;
-      color: black;
-      border-radius: 8px;
+    ul {
+      line-height: 1.8;
+    }
+
+    .icons a {
+      margin: 10px;
+      font-size: 28px;
       text-decoration: none;
     }
 
@@ -112,60 +143,61 @@
 
 <body>
 
-<!-- Floating code symbols -->
-<div class="symbols">
-  <span style="left:10%">{ }</span>
-  <span style="left:30%">&lt;/&gt;</span>
-  <span style="left:50%">SQL</span>
-  <span style="left:70%">{ }</span>
-  <span style="left:90%">&lt;/&gt;</span>
-</div>
-
 <nav>
   <a href="#about">About</a>
-  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#certifications">Certifications</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <header>
-  <img src="profile.jpg">
+  <img src="profile.jpg" alt="Akhil Sai">
   <h1>Akhil Sai</h1>
   <p>📊 Aspiring Data Analyst | Python • SQL • Power BI</p>
+
   <a href="resume.pdf" class="btn">Download Resume</a>
 </header>
 
 <section id="about">
   <h2>🚀 About Me</h2>
   <div class="card">
-    <p>I am a BSc Computers graduate passionate about solving business problems using data analytics and building insights from data.</p>
+    <p>
+      I am a BSc Computers graduate passionate about data analytics. 
+      I enjoy working with data to uncover insights and help solve real-world business problems.
+    </p>
   </div>
 </section>
 
-<section id="projects">
-  <h2>📊 Projects</h2>
-
+<section id="education">
+  <h2>🎓 Education</h2>
   <div class="card">
-    <h3>Sales Dashboard Analysis</h3>
-    <p>Analyzed 10,000+ records to identify profit trends.</p>
+    <ul>
+      <li>BSc Computers – Satavahana University</li>
+    </ul>
   </div>
+</section>
 
+<section id="certifications">
+  <h2>📜 Certifications</h2>
   <div class="card">
-    <h3>Customer Churn Analysis</h3>
-    <p>Built model to predict customer drop.</p>
+    <ul>
+      <li>HP LIFE – Data Analysis & Data Scientist</li>
+      <li>SQL Certification – Newton School</li>
+      <li>Data Analysis Certification – Simplilearn</li>
+    </ul>
   </div>
-
-  <div class="card">
-    <h3>HR Analytics Dashboard</h3>
-    <p>Analyzed employee attrition insights.</p>
-  </div>
-
 </section>
 
 <section id="contact">
   <h2>📫 Contact</h2>
-  <div class="card">
-    <p><a href="https://www.linkedin.com/in/thirunagariakhil">LinkedIn</a></p>
-    <p><a href="https://github.com/akhil-data-analytics">GitHub</a></p>
+  <div class="card icons">
+    <a href="https://www.linkedin.com/in/thirunagariakhil" target="_blank">
+      <i class="fab fa-linkedin" style="color:#0A66C2;"></i>
+    </a>
+
+    <a href="https://github.com/akhil-data-analytics" target="_blank">
+      <i class="fab fa-github" style="color:white;"></i>
+    </a>
   </div>
 </section>
 
