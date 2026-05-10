@@ -1,4 +1,5 @@
-# akhil-analytics-lab.github.io
+# akhil-data-analytics.github.io
+
 Data Analytics Portfolio | Python, SQL, Power BI | Projects &amp; Insights
 # 👋 Hi, I'm Akhil Sai
 
